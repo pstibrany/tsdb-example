@@ -2,13 +2,15 @@
 
 This small program uses Prometheus TSDB Library to generate single TSDB block.
 
-It is meant to work as an example to show how to
-1) Generate chunks from some input data,
+It is meant to work as an example to show how to:
+1) Generate chunks from some input data (sine wave in this case),
 2) write chunks to disk using chunks writer,
 3) how to generate index, adding symbols and series,
 4) and write meta.json file.
 
 Running this program generates TSDB block, which can then be stored into Prometheus and queried.
+
+<p align="center"><img src="sine_wave.png" alt="Prometheus showing sine wave, which is the queried metric from generated block."></p>
 
 In practice you usually want to include many series, which complicates the process slightly.
 Since all symbols must be written to the index in advance, this means that labels for all
